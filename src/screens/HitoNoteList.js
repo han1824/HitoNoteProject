@@ -52,7 +52,7 @@ export const HitoNoteList = () => {
         </View>
       </View>
 
-      {/* ヒトエリア */}
+      {/* ヒトノートエリア */}
       <View style={styles.hitoArea}>
         <FlatList
           data={sampleData}

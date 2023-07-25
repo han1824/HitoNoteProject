@@ -54,7 +54,7 @@ export const HitoNoteList = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F000",
+    // backgroundColor: "#F000",
     alignItems: "center",
     justifyContent: "center",
     width: "100%",

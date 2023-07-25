@@ -1,4 +1,10 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 // アイコンの読み込み
 import Icon from "react-native-vector-icons/AntDesign";
 
@@ -9,22 +15,44 @@ export const HitoNoteList = () => {
     { id: "3", name: "木村良平" },
   ];
 
+  // ハンバーガーメニュー
+  const menu = {};
+
+  // 編集ページにジャンプする予定
+  const edit = {};
+
+  // 追加ページにジャンプする予定
+  const tags = {};
+
+  // 追加ページにジャンプする予定
+  const add = {};
+
+  // 追加ページにジャンプする予定
+  const serch = {};
+
   return (
     <View style={styles.container}>
+      {/* ハンバーガーエリア */}
       <View style={styles.hamburgerArea}>
         <View style={styles.hamburger}>
-          <View style={styles.hamburger1}></View>
-          <View style={styles.hamburger2}></View>
-          <View style={styles.hamburger3}></View>
+          <TouchableOpacity onPress={menu}>
+            <View style={styles.hamburger1}></View>
+            <View style={styles.hamburger2}></View>
+            <View style={styles.hamburger3}></View>
+          </TouchableOpacity>
         </View>
       </View>
 
+      {/* 見出しエリア */}
       <View style={styles.indexArea}>
         <View style={styles.index}>
-          <Text style={styles.headline}>か</Text>
+          <TouchableOpacity>
+            <Text style={styles.headline}>か</Text>
+          </TouchableOpacity>
         </View>
       </View>
 
+      {/* ヒトエリア */}
       <View style={styles.hitoArea}>
         <FlatList
           data={sampleData}
@@ -35,16 +63,33 @@ export const HitoNoteList = () => {
                 <Text style={styles.hito}>{item.name}</Text>
               </View>
               <View>
-                <Icon name="edit" color="#00e5ff" size={40} />
+                <TouchableOpacity onPress={edit}>
+                  <Icon name="edit" color="#00e5ff" size={40} />
+                </TouchableOpacity>
               </View>
             </View>
           )}
         />
       </View>
 
+      {/* 人物追加情報エリア */}
       <View style={styles.addArea}>
+        <View>
+          <TouchableOpacity onPress={tags}>
+            <Icon name="tagso" color="#fff" size={47} />
+          </TouchableOpacity>
+        </View>
+
         <View style={styles.addButton}>
-          <Icon name="pluscircle" color="#fff" size={70} />
+          <TouchableOpacity onPress={add}>
+            <Icon name="pluscircle" color="#fff" size={70} />
+          </TouchableOpacity>
+        </View>
+
+        <View>
+          <TouchableOpacity onPress={serch}>
+            <Icon name="search1" color="#fff" size={37} />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -61,6 +106,7 @@ const styles = StyleSheet.create({
     height: "100%",
   },
 
+  // ハンバーガーエリア
   hamburgerArea: {
     alignItems: "left",
     justifyContent: "flex-end",
@@ -104,6 +150,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 
+  // 見出しエリア
   indexArea: {
     alignItems: "center",
     justifyContent: "flex-end",
@@ -126,6 +173,8 @@ const styles = StyleSheet.create({
   headline: {
     fontSize: 30,
   },
+
+  // ヒトエリア
   hitoArea: {
     alignItems: "center",
     justifyContent: "center",
@@ -134,7 +183,6 @@ const styles = StyleSheet.create({
     height: "70%",
     paddingTop: 10,
   },
-
   hitos: {
     alignItems: "center",
     justifyContent: "center",
@@ -153,12 +201,15 @@ const styles = StyleSheet.create({
     // padding: 15,
     // margin: 10,
   },
+
+  // 人物追加エリア
   addArea: {
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#00e5ff",
     width: "100%",
     height: "10%",
+    flexDirection: "row",
   },
   addButton: {
     // backgroundColor: "#fff",
@@ -166,5 +217,6 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     width: 80,
     height: 80,
+    marginHorizontal: 55,
   },
 });

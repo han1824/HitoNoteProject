@@ -1,13 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
-import { HitoNoteList } from "./src/screens/HitoNoteList";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <HitoNoteList />
-    </View>
-  );
-}
+export const Add = () => {};
 
 const styles = StyleSheet.create({
   container: {

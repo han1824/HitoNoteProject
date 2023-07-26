@@ -7,6 +7,9 @@ import {
 } from "react-native";
 // アイコンの読み込み
 import Icon from "react-native-vector-icons/AntDesign";
+// DBの読み込み
+// import { db } from "../../firebaseConfig";
+// import { collection, getDocs } from "firebase/firestore";
 
 export const HitoNoteList = () => {
   const sampleData = [
@@ -16,19 +19,29 @@ export const HitoNoteList = () => {
   ];
 
   // ハンバーガーメニュー
-  const menu = {};
+  const menu = () => {
+    console.log("menuがタッチされました");
+  };
 
   // 編集ページにジャンプする予定
-  const edit = {};
+  const edit = () => {
+    console.log("editがタッチされました");
+  };
 
-  // 追加ページにジャンプする予定
-  const tags = {};
+  // タグ検索ページにジャンプする予定
+  const tags = () => {
+    console.log("tagsがタッチされました");
+  };
 
-  // 追加ページにジャンプする予定
-  const add = {};
+  // 人物追加ページにジャンプする予定j
+  const add = () => {
+    console.log("addがタッチされました");
+  };
 
-  // 追加ページにジャンプする予定
-  const serch = {};
+  // 人物検索ページにジャンプする予定
+  const serch = () => {
+    console.log("serchがタッチされました");
+  };
 
   return (
     <View style={styles.container}>

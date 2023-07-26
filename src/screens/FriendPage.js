@@ -7,11 +7,8 @@ import {
 } from "react-native";
 // アイコンの読み込み
 import Icon from "react-native-vector-icons/AntDesign";
-// DBの読み込み
-// import { db } from "../../firebaseConfig";
-// import { collection, getDocs } from "firebase/firestore";
 
-export const HitoNoteList = () => {
+export const FriendPage = () => {
   const sampleData = [
     { id: "1", name: "柿原徹也" },
     { id: "2", name: "金澤桃子" },
@@ -66,14 +63,14 @@ export const HitoNoteList = () => {
       </View>
 
       {/* ヒトノートエリア */}
-      <View style={styles.friendArea}>
+      <View style={styles.hitoArea}>
         <FlatList
           data={sampleData}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <View style={styles.friends}>
+            <View style={styles.hitos}>
               <View>
-                <Text style={styles.friend}>{item.name}</Text>
+                <Text style={styles.hito}>{item.name}</Text>
               </View>
               <View>
                 <TouchableOpacity onPress={edit}>
@@ -188,7 +185,7 @@ const styles = StyleSheet.create({
   },
 
   // ヒトエリア
-  friendArea: {
+  hitoArea: {
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#e0f7fa",
@@ -196,7 +193,7 @@ const styles = StyleSheet.create({
     height: "70%",
     paddingTop: 10,
   },
-  friends: {
+  hitos: {
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
@@ -208,7 +205,7 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: "#fff",
   },
-  friend: {
+  hito: {
     fontSize: 25,
     width: 230,
     // padding: 15,
